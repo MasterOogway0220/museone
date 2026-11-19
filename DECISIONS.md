@@ -1,0 +1,4 @@
+- 2026-11-19 — Vite + React + vite-react-ssg prerender (user call; replaces earlier Next.js pick). Prerender keeps real HTML + meta per route for SEO and social previews; contact handled by one Vercel serverless function. Next.js was more than a mostly single-page site needs.
+- 2026-11-19 — Canvas 2D for speed lines / impact frames before any WebGL: cheaper, works on mid phones; WebGL shader only if the 2D dive misses the design bar.
+- 2026-11-19 — Use sakuga-vfx (MIT) for form controls only, skip Toggle (500 KB sprite). Own identity everywhere else so we don't look like the reference.
+- 2026-11-19 — Palette hand-directed (paper/ink) over generator output; generator's lavender read as AI-default and too close to sakuga-vfx.
