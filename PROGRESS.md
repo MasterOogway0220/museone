@@ -1,6 +1,6 @@
 # PROGRESS
 **Goal:** MuseOne immersive scroll agency site   **Done-condition:** see PLAN.md Task Card
-**Status:** 🟠 v1 built and running locally; user wants a redesign toward illoca.unseen.co (real 3D world). Waiting on user's clarifications   **Last updated:** 2026-11-19
+**Status:** 🟢 v2 (illoca-style studio) live at https://museone.vercel.app, deployed from master d5e0562   **Last updated:** 2026-11-19
 
 ## Done (verified)
 - [x] #1 Scaffold: Vite + React + vite-react-ssg prerender. Build ✅ typecheck ✅. Prerendered dist/index.html contains title, description, OG, JSON-LD and all section text.
@@ -39,6 +39,8 @@
 - Removed: anime pieces (katakana, speed lines, sakuga-vfx, previews page). In git history.
 - Verified: build ✅ typecheck ✅ tests 4/4 ✅ prerendered HTML has all copy; one card visible per shot (checked 6 shots); mobile 390 no overflow; anti-slop HIGH 0, motion HIGH 0.
 - Not verified: real frame rate (automation browser throttles rAF).
+- Live check: museone.vercel.app loads, stage ready, no page errors; /preview now 404 (removed).
+- Next: real crew names/roles, Resend env vars in Vercel, user check of smoothness on real devices, optional voting/comment system for partners.
 
 ## (superseded) New request, real estate
 - User wants a site "like illoca.unseen.co" for real estate & architecture. Plan: same DNA (one 3D world, scroll camera, illustrated two-tone render, framed viewport, restrained UI), original scene/copy/brand, not a clone. Asked: who it's for, where it lives, which story.
