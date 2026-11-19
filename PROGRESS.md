@@ -1,6 +1,6 @@
 # PROGRESS
 **Goal:** MuseOne immersive scroll agency site   **Done-condition:** see PLAN.md Task Card
-**Status:** 🟡 First full build running locally, items 1–9 built, item 10 partly, item 11 partly   **Last updated:** 2026-11-19
+**Status:** 🟠 v1 built and running locally; user wants a redesign toward illoca.unseen.co (real 3D world). Waiting on user's clarifications   **Last updated:** 2026-11-19
 
 ## Done (verified)
 - [x] #1 Scaffold: Vite + React + vite-react-ssg prerender. Build ✅ typecheck ✅. Prerendered dist/index.html contains title, description, OG, JSON-LD and all section text.
@@ -14,6 +14,13 @@
 - [x] #9 Nav: topbar, chapter rail + frame counter, full-screen menu with focus trap/Esc
 - Reduced motion verified: no loader, no pins, all content readable (qa/14). Mobile 375: no horizontal overflow.
 - tastemaker motion audit: 0 HIGH. anti-slop: 0 HIGH.
+
+## Direction change (2026-11-19)
+- User feedback: v1 design not impressive enough; keep the anime theme. Reference: https://illoca.unseen.co/
+- Studied it: notes in .tastemaker/reference-board.md, screenshots in qa/ref/
+- User decision: **Real 3D world** (Three.js, cel shading, ink outlines, paper grain, scroll-driven camera)
+- Open questions (user asked to clarify before answering): which world the camera travels through (storyboard → anime city / floating island / animator's desk), and the 3D asset source (CC0 kits + code / code only / user supplies models)
+- Also done since last update: ending headline capped at 2 lines; chapter rail now tracks scroll position (commit ac7c0ac)
 
 ## Not done / next
 - Real email send untested (needs RESEND_API_KEY, CONTACT_TO, CONTACT_FROM on Vercel; `vite` dev does not serve /api, so the form shows "did not send" locally)
