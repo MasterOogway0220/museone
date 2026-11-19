@@ -14,6 +14,10 @@ const params = new URLSearchParams(location.search)
 const initial = params.get('v') as Id | null
 const forcedP = params.has('p') ? Number(params.get('p')) : null // review aid: freeze the camera at a scroll position
 
+// Always open on the intro: shared links and reloads should not land mid-journey.
+history.scrollRestoration = 'manual'
+scrollTo(0, 0)
+
 const maxScroll = () => Math.max(1, document.documentElement.scrollHeight - innerHeight)
 
 function webglOk() {
