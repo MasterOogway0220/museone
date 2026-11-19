@@ -33,7 +33,14 @@
 - Contact API live but RESEND_API_KEY / CONTACT_TO / CONTACT_FROM not set in Vercel yet, so messages are not delivered
 - Voting for partners: not built (user interrupted the choice)
 
-## New request (2026-11-19, awaiting answers)
+## v2: illoca-style redesign (2026-11-19)
+- User: same work (development + marketing agency), illoca's style and design, not anime, not a copy.
+- Built: one framed WebGL studio scene (desk for three, window + sunset skyline, pinboard, monitors that build themselves); scroll moves the camera shot to shot; one text card per shot pinned bottom-left; handwritten notes; graph-paper page; Bricolage Grotesque + JetBrains Mono + Caveat; paper + cobalt + one red accent.
+- Removed: anime pieces (katakana, speed lines, sakuga-vfx, previews page). In git history.
+- Verified: build ✅ typecheck ✅ tests 4/4 ✅ prerendered HTML has all copy; one card visible per shot (checked 6 shots); mobile 390 no overflow; anti-slop HIGH 0, motion HIGH 0.
+- Not verified: real frame rate (automation browser throttles rAF).
+
+## (superseded) New request, real estate
 - User wants a site "like illoca.unseen.co" for real estate & architecture. Plan: same DNA (one 3D world, scroll camera, illustrated two-tone render, framed viewport, restrained UI), original scene/copy/brand, not a clone. Asked: who it's for, where it lives, which story.
 
 ## Not done / next

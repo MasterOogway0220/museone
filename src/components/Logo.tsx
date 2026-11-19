@@ -1,10 +1,10 @@
-/** Hanko seal with an M cut from two speed-line wedges. */
-export function Seal({ className = '' }: { className?: string }) {
+/** MuseOne mark: an M drawn as one folded line inside a square, with a single accent dot. */
+export function Mark({ className = '' }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 64 64" aria-hidden="true">
-      <circle cx="32" cy="32" r="29" fill="var(--seal)" />
-      <circle cx="32" cy="32" r="24" fill="none" stroke="var(--paper)" strokeWidth="2.5" />
-      <path d="M16 46 L24 18 L32 36 L40 18 L48 46 L42 46 L39 33 L32 48 L25 33 L22 46 Z" fill="var(--paper)" />
+    <svg className={className} viewBox="0 0 40 40" aria-hidden="true">
+      <rect x="1.5" y="1.5" width="37" height="37" rx="3" fill="var(--cobalt)" />
+      <path d="M9 30V11l11 12 11-12v19" fill="none" stroke="var(--paper-hi)" strokeWidth="3.4" strokeLinejoin="round" strokeLinecap="round" />
+      <circle cx="31" cy="31" r="2.6" fill="var(--accent)" />
     </svg>
   )
 }
@@ -12,7 +12,7 @@ export function Seal({ className = '' }: { className?: string }) {
 export function Logo() {
   return (
     <span className="logo">
-      <Seal className="logo-seal" />
+      <Mark className="logo-mark" />
       <span className="logo-word">MuseOne</span>
     </span>
   )
