@@ -33,6 +33,12 @@ export function scrollToId(id: string) {
   else el.scrollIntoView({ behavior: 'auto' })
 }
 
+/** Smoothly scroll to an absolute Y, through Lenis when it is running. */
+export function scrollToY(y: number, duration = 1.6) {
+  if (lenis) lenis.scrollTo(y, { duration })
+  else window.scrollTo({ top: y, behavior: 'smooth' })
+}
+
 export function lockScroll(locked: boolean) {
   if (locked) lenis?.stop()
   else lenis?.start()

@@ -36,5 +36,20 @@ body:has(.pv) { background: var(--pv-page); }
 
 @media (prefers-reduced-motion: reduce) { .pv-cap, .pv-sfx { animation: none; } }
 
+/* review controls + progress */
+.pv-progress { position: absolute; inset: 0 0 auto; height: 4px; background: rgb(0 0 0 / .15); z-index: 4; }
+.pv-progress > div { height: 100%; background: var(--pv-accent); transform-origin: left; transform: scaleX(0); }
+.pv-controls { position: absolute; right: 22px; bottom: 22px; z-index: 5; display: flex; gap: 6px; }
+.pv-controls button { font-family: var(--font-display); font-size: 15px; padding: 10px 14px; background: #FBF8F1; color: #14121A; border: 2.5px solid #14121A; box-shadow: 3px 3px 0 #14121A; cursor: pointer; transition: transform .12s ease-out; }
+.pv-controls button:active { transform: translate(2px, 2px); }
+.pv-controls .pv-play { background: var(--pv-accent); color: #FFF8EC; }
+.pv-error { top: 50%; bottom: auto; translate: 0 -50%; }
+.pv-error code { font-family: var(--font-mono); font-size: 13px; background: #efe6d6; padding: 2px 6px; word-break: break-word; }
+@media (max-width: 700px) {
+  .pv-controls { right: 12px; bottom: 12px; }
+  .pv-controls button { font-size: 13px; padding: 8px 10px; }
+  .pv-cap { left: 12px; bottom: 70px; max-width: calc(100% - 24px); padding: 18px; }
+}
+
 .pv-short { display: none; }
 @media (max-width: 700px) { .pv-short { display: inline; } }
