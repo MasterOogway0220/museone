@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type MouseEvent } from 'react'
 import { chapters } from '../content'
-import { ScrollTrigger, lockScroll, scrollToId } from '../lib/motion'
+import { lockScroll, scrollToId } from '../lib/motion'
 import { Logo } from './Logo'
 
 export default function Nav() {
@@ -10,27 +10,28 @@ export default function Nav() {
   const toggleRef = useRef<HTMLButtonElement>(null)
   const frameRef = useRef<HTMLSpanElement>(null)
 
-  // Which chapter is on screen + the frame counter
+  // Which chapter is on screen + the frame counter. Measured on scroll/resize so it can't go stale after a refresh.
   useEffect(() => {
-    const triggers = chapters.map((c) =>
-      ScrollTrigger.create({
-        trigger: `#${c.id}`,
-        start: 'top 50%',
-        end: 'bottom 50%',
-        onToggle: (self) => self.isActive && setActive(c.id),
-      }),
-    )
     let raf = 0
-    const onScroll = () => {
+    const update = () => {
       cancelAnimationFrame(raf)
       raf = requestAnimationFrame(() => {
         if (frameRef.current) frameRef.current.textContent = String(Math.round(scrollY / 6)).padStart(4, '0')
+        let current: string = chapters[0].id
+        for (const c of chapters) {
+          const el = document.getElementById(c.id)
+          if (el && el.getBoundingClientRect().top <= innerHeight / 2) current = c.id
+        }
+        setActive(current)
       })
     }
-    addEventListener('scroll', onScroll, { passive: true })
+    update()
+    addEventListener('scroll', update, { passive: true })
+    addEventListener('resize', update)
     return () => {
-      triggers.forEach((t) => t.kill())
-      removeEventListener('scroll', onScroll)
+      cancelAnimationFrame(raf)
+      removeEventListener('scroll', update)
+      removeEventListener('resize', update)
     }
   }, [])
 

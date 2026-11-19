@@ -403,3 +403,7 @@ sakuga-button::part(button) { font-family: var(--font-display); font-style: norm
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Ending headline: never more than two lines (balanced, breaks after the colon) */
+.scene-ending .section-head { max-width: none; }
+.scene-ending .section-head h2 { font-size: clamp(28px, 7.6vw, 84px); }
