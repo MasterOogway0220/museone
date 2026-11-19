@@ -1,0 +1,40 @@
+.pv { --pv-page: #F3E3CF; --pv-ink: #14121A; color: var(--pv-ink); min-height: 100svh; background: var(--pv-page); }
+body:has(.pv) { background: var(--pv-page); }
+.pv-track { height: 900vh; }
+
+.pv-frame { position: fixed; inset: 64px 18px 18px; border: 3px solid var(--pv-ink); box-shadow: 6px 6px 0 var(--pv-ink); overflow: hidden; background: #000; }
+.pv-canvas { display: block; width: 100%; height: 100%; }
+.pv-hud { position: absolute; inset: 14px 18px auto; display: flex; justify-content: space-between; color: #fff; mix-blend-mode: difference; pointer-events: none; }
+
+.pv-picker { position: fixed; top: 12px; left: 50%; translate: -50% 0; z-index: 30; display: flex; gap: 4px; padding: 4px; background: var(--pv-page); border: 2px solid var(--pv-ink); box-shadow: 3px 3px 0 var(--pv-ink); }
+.pv-picker button { font-family: var(--font-display); font-size: 13px; padding: 7px 12px; color: var(--pv-ink); cursor: pointer; white-space: nowrap; }
+.pv-picker button[aria-selected="true"] { background: var(--pv-accent); color: #FFF8EC; }
+.pv-blurb { position: fixed; top: 16px; right: 18px; z-index: 29; max-width: 280px; font-size: 10.5px; line-height: 1.4; color: var(--pv-ink); text-align: right; }
+@media (max-width: 1250px) { .pv-blurb { display: none; } }
+@media (max-width: 700px) {
+  .pv-picker button { font-size: 12px; padding: 7px 10px; }
+  .pv-full { display: none; }
+  .pv-frame { inset: 58px 8px 8px; }
+}
+
+/* manga caption boxes, same type system as the site */
+.pv-cap { position: absolute; left: 28px; bottom: 28px; max-width: min(520px, calc(100% - 56px)); padding: 24px 26px; background: #FBF8F1; color: #14121A; border: 3px solid #14121A; box-shadow: 7px 7px 0 var(--pv-accent); animation: cap-in .3s steps(3) both; }
+@keyframes cap-in { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
+.pv-k { color: var(--pv-accent); margin-bottom: 10px; }
+.pv-cap h1 { font-size: clamp(34px, 4.4vw, 64px); margin-bottom: 14px; }
+.pv-cap h2 { font-size: clamp(30px, 3.6vw, 52px); margin-bottom: 12px; }
+.pv-cap p:not(.pv-k):not(.pv-scroll) { font-size: 16px; line-height: 1.55; }
+.pv-cap ul { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.pv-cap li { border: 1.5px solid #14121A; padding: 4px 8px; font-size: 11px; }
+.pv-intro { top: 50%; bottom: auto; translate: 0 -50%; border-radius: 36px; }
+.pv-scroll { margin-top: 16px; color: #4a4652; }
+.pv-end { left: 50%; bottom: 50%; translate: -50% 50%; text-align: center; display: grid; justify-items: center; gap: 8px; }
+.pv-end sakuga-button { --sk-card: #FBF8F1; --sk-ink: #14121A; --sk-soft: var(--pv-accent); --sk-acc: var(--pv-accent); --sk-r: 4px; --sk-sh: 5px 5px 0 var(--pv-accent); --sk-btn-sh: var(--sk-sh); --sk-btn-line: #14121A; margin-top: 8px; }
+
+.pv-sfx { position: absolute; right: 6%; top: 12%; font-family: var(--font-display); font-size: clamp(64px, 9vw, 150px); color: var(--pv-accent); text-shadow: 5px 5px 0 #FBF8F1, 9px 9px 0 #14121A; rotate: -9deg; pointer-events: none; animation: stamp .36s steps(4) both; }
+@keyframes stamp { from { scale: 2.6; rotate: -24deg; opacity: 0; } to { scale: 1; rotate: -9deg; opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) { .pv-cap, .pv-sfx { animation: none; } }
+
+.pv-short { display: none; }
+@media (max-width: 700px) { .pv-short { display: inline; } }

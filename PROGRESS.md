@@ -20,6 +20,11 @@
 - Studied it: notes in .tastemaker/reference-board.md, screenshots in qa/ref/
 - User decision: **Real 3D world** (Three.js, cel shading, ink outlines, paper grain, scroll-driven camera)
 - Open questions (user asked to clarify before answering): which world the camera travels through (storyboard → anime city / floating island / animator's desk), and the 3D asset source (CC0 kits + code / code only / user supplies models)
+- 3D previews built for the user to choose from: http://localhost:5173/preview.html (?v=a|b|c, ?p=0..1 freezes the camera for review)
+  - Shared system: two-pass cel shader (colour pass + light pass, thresholded to two tones), ink edge lines, silhouette hulls, paper grain, scroll-driven CatmullRom camera, site copy/fonts, speed lines, impact frames, katakana SFX stamps
+  - A dusk city (peach/indigo), B floating island (sky/cobalt), C night desk (navy/warm lamp). All shapes built in code, no downloaded models.
+  - Screens: qa/pv/. Camera clipping fixed in B (web apps, SEO) and C (phone, SEO). Mobile: picker uses short labels, wider FOV on portrait.
+  - Not measured: real frame rate (the automation browser throttles rAF to ~2fps even on the plain v1 site)
 - Also done since last update: ending headline capped at 2 lines; chapter rail now tracks scroll position (commit ac7c0ac)
 
 ## Not done / next
