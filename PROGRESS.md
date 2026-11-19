@@ -27,6 +27,15 @@
   - Not measured: real frame rate (the automation browser throttles rAF to ~2fps even on the plain v1 site)
 - Also done since last update: ending headline capped at 2 lines; chapter rail now tracks scroll position (commit ac7c0ac)
 
+## Deployed (2026-11-19)
+- GitHub: https://github.com/MasterOogway0220/museone (branch master), Vercel project adi0820s-projects/museone, auto-deploys on push
+- Live: https://museone.vercel.app and https://museone.vercel.app/preview (3D world previews, Play tour + arrow keys)
+- Contact API live but RESEND_API_KEY / CONTACT_TO / CONTACT_FROM not set in Vercel yet, so messages are not delivered
+- Voting for partners: not built (user interrupted the choice)
+
+## New request (2026-11-19, awaiting answers)
+- User wants a site "like illoca.unseen.co" for real estate & architecture. Plan: same DNA (one 3D world, scroll camera, illustrated two-tone render, framed viewport, restrained UI), original scene/copy/brand, not a clone. Asked: who it's for, where it lives, which story.
+
 ## Not done / next
 - Real email send untested (needs RESEND_API_KEY, CONTACT_TO, CONTACT_FROM on Vercel; `vite` dev does not serve /api, so the form shows "did not send" locally)
 - #10: Lighthouse run, OG image, sitemap + canonical (need the domain)
